@@ -3,8 +3,10 @@
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/26196076/157316198-730016bf-7818-47f0-8043-5b44f46af7d5.png">
 
 <p>
-Random fun project inspired by CJ
+Random fun project inspired by CJ. Click 👇 for demo 
 </p>
+
+[Demo](https://mbp-clicker.surge.sh/)
 
 ## Show your support
 
