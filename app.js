@@ -7,21 +7,29 @@ const group = [
 
 const itemsToShow = 3;
 let currentIndex = 0;
+
 const groupItems = (pageIndex) => {
   const startIndex = pageIndex * itemsToShow;
   const endIndex = startIndex + itemsToShow;
   for (let idx = 0; idx < group.length; idx++) {
     const currentGroup = group[idx];
     const groupEndIndex = currentIndex + currentGroup.length;
-    console.log({ currentIndex, startIndex, endIndex });
-    if (currentIndex >= startIndex && currentIndex <= endIndex) {
+
+    if (currentIndex >= startIndex && currentIndex < endIndex) {
       const shiftCurrentIndex = currentIndex - startIndex;
       const currentEndIndex = Math.min(endIndex, groupEndIndex);
       const currentGroupedItems = currentGroup.slice(
         shiftCurrentIndex,
         currentEndIndex
       );
-      console.log(currentGroupedItems);
+      console.log("cc = ", currentGroupedItems);
+    } else if (currentIndex < startIndex && currentIndex < endIndex) {
+      const currentEndIndex = Math.min(endIndex, groupEndIndex);
+      const currentGroupedItems = currentGroup.slice(
+        startIndex - currentIndex,
+        currentEndIndex
+      );
+      console.log("cc = ", currentGroupedItems);
     }
     currentIndex += currentGroup.length;
   }
